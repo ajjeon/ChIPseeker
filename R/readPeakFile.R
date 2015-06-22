@@ -37,9 +37,9 @@ peakDF2GRanges <- function(peak.df) {
 peak2DF <- function(peakfile) {
     ## determine file format
     if (isBedFile(peakfile)) {
-        peak.df <- read.delim(peakfile, header=FALSE, comment.char="#")        
+        peak.df <- read_delim(peakfile, delim="\t", col_names=FALSE)        
     } else {
-        peak.df <- read.delim(peakfile, header=TRUE, comment.char="#")
+        peak.df <- read_delim(peakfile, col_names=FALSE)
     }
     return(peak.df)
 }
